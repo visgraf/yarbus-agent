@@ -83,7 +83,12 @@ EXPLANATION: at most 400 words."""
 
 # ---------------------------------------------------------------- Claude
 class ClaudeAgent:
-    def __init__(self, model: str, max_tokens: int = 2000):
+    # Claude Opus 5.5 always thinks (adaptive) and the thinking counts against max_tokens, so the
+    # ceiling must leave room for it; it also rejects a forced tool_choice, so `act` is requested
+    # with "auto" (the system prompt names the tool) and a reply without it is re-sent unchanged.
+    NO_TOOL_RETRIES = 2
+
+    def __init__(self, model: str, max_tokens: int = 16000):
         import anthropic
         self.client = anthropic.Anthropic(max_retries=6)
         self.model = model
@@ -100,15 +105,24 @@ class ClaudeAgent:
 
     def act(self, system: str, tool: dict, text: str, images) -> tuple[dict, dict]:
         t0 = time.time()
-        r = self.client.messages.create(
-            model=self.model, max_tokens=self.max_tokens, system=system, tools=[tool],
-            tool_choice={"type": "tool", "name": "act"},
-            messages=[{"role": "user", "content": self._content(text, images)}])
-        out = next((b.input for b in r.content if b.type == "tool_use"), None)
-        if out is None:
-            raise RuntimeError(f"no tool_use in response: {r.content}")
-        return dict(out), {"input_tokens": r.usage.input_tokens, "output_tokens": r.usage.output_tokens,
-                           "seconds": round(time.time() - t0, 2), "stop_reason": r.stop_reason}
+        content = self._content(text, images)
+        tin = tout = 0
+        misses = []
+        for _ in range(1 + self.NO_TOOL_RETRIES):
+            r = self.client.messages.create(
+                model=self.model, max_tokens=self.max_tokens, system=system, tools=[tool],
+                tool_choice={"type": "auto", "disable_parallel_tool_use": True},
+                messages=[{"role": "user", "content": content}])
+            tin += r.usage.input_tokens
+            tout += r.usage.output_tokens
+            out = next((b.input for b in r.content if b.type == "tool_use" and b.name == "act"), None)
+            if out is not None:
+                return dict(out), {"input_tokens": tin, "output_tokens": tout,
+                                   "seconds": round(time.time() - t0, 2), "stop_reason": r.stop_reason,
+                                   "no_tool_retries": len(misses), "no_tool_replies": misses}
+            misses.append({"stop_reason": r.stop_reason,
+                           "text": "".join(b.text for b in r.content if b.type == "text")[:500]})
+        raise RuntimeError(f"no act call in {len(misses)} replies: {misses}")
 
     def explain(self, system: str, text: str, images) -> tuple[str, dict]:
         r = self.client.messages.create(model=self.model, max_tokens=self.max_tokens, system=system,

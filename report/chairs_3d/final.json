@@ -1,0 +1,71 @@
+{
+ "answer": "22",
+ "fixations": 4,
+ "gazes": [
+  [
+   0.0,
+   0.0
+  ],
+  [
+   -19.0,
+   -10.0
+  ],
+  [
+   12.0,
+   -6.0
+  ],
+  [
+   20.0,
+   -40.0
+  ]
+ ],
+ "marks": [
+  {
+   "id": 1,
+   "fixation": 2,
+   "yaw": -17.936,
+   "pitch": -10.457,
+   "point_head_m": [
+    -1.9277,
+    -1.1553,
+    -5.9556
+   ],
+   "merged_into": null
+  },
+  {
+   "id": 2,
+   "fixation": 3,
+   "yaw": 16.601,
+   "pitch": -7.259,
+   "point_head_m": [
+    1.8874,
+    -0.8414,
+    -6.3307
+   ],
+   "merged_into": null
+  },
+  {
+   "id": 3,
+   "fixation": 4,
+   "yaw": 19.828,
+   "pitch": -41.047,
+   "point_head_m": [
+    0.4202,
+    -1.0786,
+    -1.1654
+   ],
+   "merged_into": null
+  }
+ ],
+ "count_live_marks": 3,
+ "summary": "I read the plan as a 4×5 grid of student desks, each with a seat. I then looked for chairs outside that grid. Fixations 2 and 3 found a chair by the front-left wall and one behind the teacher's desk. Fixation 4 confirmed that the student seats are separate chairs. Total: 20 + 2 = 22.",
+ "tokens": {
+  "input_tokens": 27893,
+  "output_tokens": 2111
+ },
+ "explain_tokens": {
+  "input_tokens": 3137,
+  "output_tokens": 719
+ },
+ "finished": "2026-10-29 18:42:08"
+}

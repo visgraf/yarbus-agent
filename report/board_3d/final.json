@@ -1,0 +1,50 @@
+{
+ "answer": "This is a French reading lesson on a blackboard with two sections. I'm not sure of some words; those are marked \"?\" or \"...\".\n\nLeft section (letters, then example words):\nm – Mika\nr – un chat\nl – papa\n? – maman\n\nRight section:\nJeudi 13 septembre\n... une amie\nsamedi\nil y a\n\nSyllables, mostly circled, on the right of the board:\nma   li\nna   si\npa   la\nri   si\n(mi) – circled, at the bottom",
+ "fixations": 8,
+ "gazes": [
+  [
+   0.0,
+   0.0
+  ],
+  [
+   -10.0,
+   0.0
+  ],
+  [
+   -18.0,
+   -1.0
+  ],
+  [
+   -16.0,
+   -9.0
+  ],
+  [
+   4.0,
+   1.0
+  ],
+  [
+   12.0,
+   -2.0
+  ],
+  [
+   12.0,
+   -9.0
+  ],
+  [
+   7.0,
+   -14.0
+  ]
+ ],
+ "marks": [],
+ "count_live_marks": null,
+ "summary": "The blackboard was straight ahead, so I began reading at its centre. I swept left to the column of letters and example words, then right to the date and the circled syllables, and finished at the bottom. I stopped after eight fixations, with a few words still uncertain.",
+ "tokens": {
+  "input_tokens": 52954,
+  "output_tokens": 3696
+ },
+ "explain_tokens": {
+  "input_tokens": 3505,
+  "output_tokens": 838
+ },
+ "finished": "2026-10-29 18:37:45"
+}

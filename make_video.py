@@ -52,7 +52,10 @@ def text_block(d, xy, text, f, width, fill=INK, spacing=6, max_lines=None):
     lines = wrap(text, f, width)
     if max_lines and len(lines) > max_lines:
         lines = lines[:max_lines]
-        lines[-1] = lines[-1].rstrip() + " …"
+        last = lines[-1].rstrip()
+        while " " in last and f.getlength(last + " …") > width:   # keep the ellipsis inside the column
+            last = last.rsplit(" ", 1)[0]
+        lines[-1] = last + " …"
     for ln in lines:
         d.text((x, y), ln, fill=fill, font=f)
         y += f.size + spacing
@@ -236,13 +239,16 @@ class Replay:
         if r.q["kind"] == "count":
             d.text((PX + PW, y0), f"marked: {len(marks)}", fill=MARK, font=font(26, True), anchor="ra")
         y = y0 + 40
-        y = text_block(d, (PX, y), f"sees: {s.get('observation') or ''}", font(21), PW, INK2, max_lines=3)
-        y = text_block(d, (PX, y + 6), f"why next: {s.get('reason') or ''}", font(21), PW, INK, max_lines=3)
-        if show_answer and r.final.get("answer"):
+        has_answer = show_answer and r.final.get("answer")
+        nl = 1 if has_answer else 3                # leave room for the answer box below
+        y = text_block(d, (PX, y), f"sees: {s.get('observation') or ''}", font(21), PW, INK2, max_lines=nl)
+        y = text_block(d, (PX, y + 6), f"why next: {s.get('reason') or ''}", font(21), PW, INK, max_lines=nl)
+        if has_answer:
             fa = font(22, True)
-            n = min(4, len(wrap(f"answer: {r.final['answer']}", fa, PW - 12)))
+            fit = max(1, (H - 16 - (y + 16)) // (fa.size + 6))
+            n = min(4, fit, len(wrap(f"answer: {r.final['answer']}", fa, PW - 12)))
             d.rectangle([PX - 6, y + 4, PX + PW, y + 16 + n * (fa.size + 6)], fill=(255, 244, 214))
-            text_block(d, (PX, y + 10), f"answer: {r.final['answer']}", fa, PW - 12, INK, max_lines=4)
+            text_block(d, (PX, y + 10), f"answer: {r.final['answer']}", fa, PW - 12, INK, max_lines=n)
         sd = self.side(k)
         if sd is not None:
             im.paste(sd, (FX, FY + FN + 30))

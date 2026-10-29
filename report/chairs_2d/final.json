@@ -1,0 +1,307 @@
+{
+ "answer": "22",
+ "fixations": 28,
+ "gazes": [
+  [
+   0.0,
+   0.0
+  ],
+  [
+   10.0,
+   -15.0
+  ],
+  [
+   5.0,
+   -5.0
+  ],
+  [
+   -10.0,
+   -15.0
+  ],
+  [
+   -10.0,
+   -30.0
+  ],
+  [
+   -30.0,
+   -25.0
+  ],
+  [
+   -45.0,
+   -18.0
+  ],
+  [
+   -58.0,
+   -25.0
+  ],
+  [
+   -40.0,
+   -45.0
+  ],
+  [
+   -40.0,
+   -34.0
+  ],
+  [
+   -18.0,
+   -42.0
+  ],
+  [
+   -26.0,
+   -34.0
+  ],
+  [
+   -5.0,
+   -52.0
+  ],
+  [
+   22.0,
+   -15.0
+  ],
+  [
+   34.0,
+   -24.0
+  ],
+  [
+   30.0,
+   -16.0
+  ],
+  [
+   38.0,
+   -32.0
+  ],
+  [
+   55.0,
+   -22.0
+  ],
+  [
+   75.0,
+   -28.0
+  ],
+  [
+   85.0,
+   -42.0
+  ],
+  [
+   55.0,
+   -55.0
+  ],
+  [
+   -60.0,
+   -50.0
+  ],
+  [
+   -55.0,
+   -63.0
+  ],
+  [
+   -75.0,
+   -40.0
+  ],
+  [
+   -88.0,
+   -45.0
+  ],
+  [
+   -93.0,
+   -34.0
+  ],
+  [
+   40.0,
+   -50.0
+  ],
+  [
+   35.0,
+   -68.0
+  ]
+ ],
+ "marks": [
+  {
+   "id": 1,
+   "fixation": 2,
+   "yaw": 10.351,
+   "pitch": -13.694,
+   "point_head_m": null,
+   "merged_into": null
+  },
+  {
+   "id": 2,
+   "fixation": 2,
+   "yaw": 13.31,
+   "pitch": -17.429,
+   "point_head_m": null,
+   "merged_into": null
+  },
+  {
+   "id": 3,
+   "fixation": 4,
+   "yaw": -11.58,
+   "pitch": -12.985,
+   "point_head_m": null,
+   "merged_into": null
+  },
+  {
+   "id": 4,
+   "fixation": 4,
+   "yaw": -7.012,
+   "pitch": -12.034,
+   "point_head_m": null,
+   "merged_into": null
+  },
+  {
+   "id": 5,
+   "fixation": 4,
+   "yaw": -10.637,
+   "pitch": -20.265,
+   "point_head_m": null,
+   "merged_into": null
+  },
+  {
+   "id": 6,
+   "fixation": 5,
+   "yaw": -15.203,
+   "pitch": -28.126,
+   "point_head_m": null,
+   "merged_into": null
+  },
+  {
+   "id": 7,
+   "fixation": 6,
+   "yaw": -25.536,
+   "pitch": -23.396,
+   "point_head_m": null,
+   "merged_into": null
+  },
+  {
+   "id": 8,
+   "fixation": 7,
+   "yaw": -43.369,
+   "pitch": -21.856,
+   "point_head_m": null,
+   "merged_into": null
+  },
+  {
+   "id": 9,
+   "fixation": 8,
+   "yaw": -57.361,
+   "pitch": -25.575,
+   "point_head_m": null,
+   "merged_into": null
+  },
+  {
+   "id": 10,
+   "fixation": 10,
+   "yaw": -40.16,
+   "pitch": -35.987,
+   "point_head_m": null,
+   "merged_into": null
+  },
+  {
+   "id": 11,
+   "fixation": 12,
+   "yaw": -27.674,
+   "pitch": -39.021,
+   "point_head_m": null,
+   "merged_into": null
+  },
+  {
+   "id": 12,
+   "fixation": 14,
+   "yaw": 25.275,
+   "pitch": -15.2,
+   "point_head_m": null,
+   "merged_into": null
+  },
+  {
+   "id": 13,
+   "fixation": 15,
+   "yaw": 37.672,
+   "pitch": -22.418,
+   "point_head_m": null,
+   "merged_into": null
+  },
+  {
+   "id": 14,
+   "fixation": 16,
+   "yaw": 31.841,
+   "pitch": -17.978,
+   "point_head_m": null,
+   "merged_into": null
+  },
+  {
+   "id": 15,
+   "fixation": 16,
+   "yaw": 25.587,
+   "pitch": -21.674,
+   "point_head_m": null,
+   "merged_into": null
+  },
+  {
+   "id": 16,
+   "fixation": 17,
+   "yaw": 35.826,
+   "pitch": -35.376,
+   "point_head_m": null,
+   "merged_into": null
+  },
+  {
+   "id": 17,
+   "fixation": 18,
+   "yaw": 54.856,
+   "pitch": -26.332,
+   "point_head_m": null,
+   "merged_into": null
+  },
+  {
+   "id": 18,
+   "fixation": 20,
+   "yaw": 87.88,
+   "pitch": -46.529,
+   "point_head_m": null,
+   "merged_into": null
+  },
+  {
+   "id": 19,
+   "fixation": 21,
+   "yaw": 56.931,
+   "pitch": -57.207,
+   "point_head_m": null,
+   "merged_into": null
+  },
+  {
+   "id": 20,
+   "fixation": 23,
+   "yaw": -63.684,
+   "pitch": -58.115,
+   "point_head_m": null,
+   "merged_into": null
+  },
+  {
+   "id": 21,
+   "fixation": 26,
+   "yaw": -86.916,
+   "pitch": -30.206,
+   "point_head_m": null,
+   "merged_into": null
+  },
+  {
+   "id": 22,
+   "fixation": 28,
+   "yaw": 37.522,
+   "pitch": -65.499,
+   "point_head_m": null,
+   "merged_into": null
+  }
+ ],
+ "count_live_marks": 22,
+ "summary": "The panorama showed a classroom with rows of desk-chairs in front of me. I swept the desk groups from the centre, then left, then right toward the windows. Near chairs were hard to identify, so I followed legs, seats and desk tops until each chair was clear. I marked each chair once and counted 22.",
+ "tokens": {
+  "input_tokens": 114695,
+  "output_tokens": 16950
+ },
+ "explain_tokens": {
+  "input_tokens": 5261,
+  "output_tokens": 920
+ },
+ "finished": "2026-10-29 18:41:26"
+}

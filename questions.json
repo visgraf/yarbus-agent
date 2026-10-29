@@ -1,0 +1,4 @@
+[
+ {"id": "board", "question": "What is written on the blackboard?", "kind": "read", "pano": "near_board"},
+ {"id": "chairs", "question": "How many chairs are there?", "kind": "count", "target": "chair", "pano": "back_of_room"}
+]

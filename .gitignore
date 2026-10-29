@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+panos/
+runs/
+stills/
+peek/
+*.mp4
